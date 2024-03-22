@@ -29,9 +29,9 @@ public class Celular implements Serializable {
 	
 	private String marca;
 	
-	@Column(name = "create_at")
+	@Column(name = "created_at")
 	@Temporal (TemporalType. TIMESTAMP)
-	private Date createAt;
+	private Date createdAt;
 	
 	public Long getId() {
 		return id;
@@ -51,11 +51,11 @@ public class Celular implements Serializable {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	public Date getCreateAt() {
-		return createAt;
+	public Date getCreatedAt() {
+		return createdAt;
 	}
-	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 	
 	

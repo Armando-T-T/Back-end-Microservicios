@@ -2,6 +2,7 @@ package com.microservice.celulares.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,9 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.microservice.celulares.entity.Celular;
+import com.microservice.celulares.service.CelularService;
 
 @RestController
 public class CelularController {
+	
+	@Autowired
+	private CelularService service;
 	
 	@GetMapping("/list")
 	public List<Celular> list() {
@@ -24,7 +29,7 @@ public class CelularController {
 	
 	@DeleteMapping("/celular/{id}")
 	public ResponseEntity<Void> drop (@PathVariable Long id) {
-		service.deleteById();
+		service.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}
 	
