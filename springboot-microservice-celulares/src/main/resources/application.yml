@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: service-celulares
+eureka:
+  client:
+    service-url:
+      defaultZone: https://localhost:8761/eureka
